@@ -1,0 +1,74 @@
+.stat-group {
+    padding: 15px;
+    border-radius: 8px;
+    border: 3px solid black; /* Add black outline */
+    width: fit-content;
+    margin:5px;
+}
+#stat-section {
+    /* color:rgb(255, 119, 0); */
+    display: flex;
+}
+p {
+    color:black;
+}
+input[type=range] {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+input[type=range]:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+:disabled {
+    background:rgb(139, 139, 139);
+}
+:disabled:hover {
+    background:rgb(139, 139, 139);
+}
+.disabled {
+    pointer-events: none;
+    filter:opacity(.5);
+    background-color:red;
+}
+.selected {
+    background-color: orange;
+    color:black;
+    filter: opacity(.9);
+
+
+    background: orange; /* Grey background */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+button {
+    filter: opacity(.7);
+}
+#personal-stats-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#game {
+    border: 3px solid black; /* Add black outline */
+    background-color: black;
+    width: 100vw;
+    height:75vw;
+    max-height: 400px;
+
+}
+#game-display {
+    background-color:orange;
+    max-width: 300px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

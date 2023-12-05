@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <h1>The O-Range</h1>
+    <hr> <!-- Line underneath the header -->
+    <p>A small description goes here.</p> <!-- Small description -->
+    <br> <!-- Gap -->
+
+    
+
+
+
+
+<div id="game"><div id="game-display" class="disabled"> </div>
+<div id="controls"><button id="toggle-timer" value="0">timer</button><div id="current time">00:00:00</div><div id="legal-hunting-start"></div><div id="legal-hunt-end"></div></div>   
+
+<div id="personal-stats-information">
+    <div class="stat-group" id="stat-information"> 
+        <h2>Stats</h2>
+        <hr> <!-- Line underneath the header -->
+        <div><p>Total points:</p><p id="remainingPoints"></p></div> <!-- Small description -->
+        <br> <!-- Gap -->
+        <!-- Slider that the user can't modify -->
+        <!-- <input type="range" id="slider1" min="1" max="10" data-val="0" disabled>Allocated Stat Points<br> -->
+    </div> 
+    <div id="stat-section" >
+        <div class="stat-group">
+            <h3>Equipment</h3>
+            <p>Each piece costs 2</p>
+            <hr> <!-- Line underneath the header -->
+            <button data-val="0" class="equipment_item">Orange</button><br>
+            <button data-val="0" class="equipment_item">Binoculars</button><br>
+            <button data-val="0" class="equipment_item">Scope</button><br>
+            <button data-val="0" class="equipment_item">Watch</button><br>
+            <button data-val="0" class="equipment_item">Rounds</button><br>
+            <button data-val="0" class="equipment_item">Wearable Decoy</button><br>
+        </div>
+        <!-- <div class="stat-group">
+            <h3>Skills</h3>
+            <hr>
+            <input type="range" id="slider1" min="0" max="3" data-val="0" class="skill_item" value="0"> Eyesight<br>
+            <input type="range" id="slider2" min="0" max="3" data-val="0" class="skill_item" value="0"> Research<br>
+            <input type="range" id="slider3" min="0" max="3" data-val="0" class="skill_item" value="0"> Accuracy<br>
+            <input type="range" id="slider4" min="0" max="3" data-val="0" class="skill_item" value="0"> Nerves<br>
+            <input type="range" id="slider5" min="0" max="3" data-val="0" class="skill_item" value="0"> Bargaining<br>
+        </div> -->
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+    </body>
+    </html>
