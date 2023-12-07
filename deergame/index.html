@@ -4,22 +4,26 @@
 <head>
     <title>My Game</title>
     <link rel="stylesheet" href="css/stylesheet.css">
+    
 </head>
 <body>
-    <h1>The O-Range</h1>
-    <hr> <!-- Line underneath the header -->
-    <p>A small description goes here.</p> <!-- Small description -->
-    <br> <!-- Gap -->
 
+    <h1>The O-Range</h1> <div id="deerAlert">.</div>
+    <hr> <!-- Line underneath the header -->
+    <p>Ethically hunt bucks!</p> <!-- Small description -->
+    <br> <!-- Gap -->
+    <div><p id="points">0</p><p>points. </p></div>
     
 
 
 
 
-<div id="game"><div id="game-display" class="disabled"> </div>
-<div id="controls"><button id="toggle-timer" value="0">timer</button><div id="current time">00:00:00</div><div id="legal-hunting-start"></div><div id="legal-hunt-end"></div></div>   
+    <div id="game"><div id="game-display" class="disabled"> </div>
+    <div id="controls" class="row"><button id="toggle-timer" value="0">timer</button><div id="current-time">00:00:00</div><div id="legal-hunting-start"></div><div id="legal-hunt-end"></div><button id="shoot">shoot</button><button id="safety">safety</button><button id="reload">reload</button></button></div>   
 
-<div id="personal-stats-information">
+    <div id="personal-stats-information">
+    <!-- <div id="watch"><div class="illegal-before">.</div><div class="legal">.</div><div class="illegal-after">.</div></div> -->
+
     <div class="stat-group" id="stat-information"> 
         <h2>Stats</h2>
         <hr> <!-- Line underneath the header -->
@@ -28,6 +32,7 @@
         <!-- Slider that the user can't modify -->
         <!-- <input type="range" id="slider1" min="1" max="10" data-val="0" disabled>Allocated Stat Points<br> -->
     </div> 
+    
     <div id="stat-section" >
         <div class="stat-group">
             <h3>Equipment</h3>
@@ -38,7 +43,16 @@
             <button data-val="0" class="equipment_item">Scope</button><br>
             <button data-val="0" class="equipment_item">Watch</button><br>
             <button data-val="0" class="equipment_item">Rounds</button><br>
-            <button data-val="0" class="equipment_item">Wearable Decoy</button><br>
+            <!-- <button data-val="0" class="equipment_item">Wearable Decoy</button><br> -->
+        </div>
+        <div id="animal-detector" class="stat-group">
+            <h3>Animals</h3>
+            <!-- <p id="encounterOne">.</p>
+            <p id="encounterTwo">.</p>
+            <p id="encounterThree">.</p>
+            <p id="encounterFour">.</p> -->
+        </div>
+
         </div>
         <!-- <div class="stat-group">
             <h3>Skills</h3>
@@ -53,5 +67,7 @@
 </div>
 
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/Flip.min.js"></script>
     </body>
     </html>
