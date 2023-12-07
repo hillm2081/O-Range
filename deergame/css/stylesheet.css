@@ -1,24 +1,175 @@
 html {
-    background-color:rgb(63, 63, 63);
+    background-color:#000000;
     color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    margin:0;
 }
 
-
 .stat-group {
-    background-color:rgb(104, 79, 63);
-    color:white;
+    background-color:rgb(53, 50, 48);
+    color:rgb(202, 112, 28);
+    /* font-weight: bolder; */
     padding: 15px;
     border-radius: 8px;
     border: 3px solid black; /* Add black outline */
     width: fit-content;
-    margin:5px;
+    /* margin:5px; */
 }
 #stat-section {
     /* color:rgb(255, 119, 0); */
     display: flex;
+    justify-content: center;
+    max-width: 800px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
 }
 p {
+    margin:5px;
+}
+#deerAlert {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    font-size:larger;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:rgb(88, 19, 19);
+    border: 3px solid  orange;
+
+
+
+
+}
+.space-between {
+    
+
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Style the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: rgb(32, 32, 32);
+  }
+  
+  /* Style the scrollbar handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(124, 66, 9);
+    border-radius:10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: orange;
+  }
+
+#timeAlert {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    font-size:larger;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:rgb(0, 0, 0);
+    border: 3px solid  orange;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visible {
+    width: 50px;
+    height: 50px;
+    background-color:red;
+}
+
+p {
     color:rgb(219, 219, 219);
+}
+
+
+#shoot {
+    width:100px;
+    height:100px;
+    background: linear-gradient(135deg, #ff4a4a, #840f0f);
+
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    /* padding: 20px 40px; */
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(158, 158, 158, 0.5);
+    transition: background-color 0.3s ease;
+    filter:opacity(0.8)
+}
+#safety {
+    background-color:rgb(40, 40, 40);
+    outline: 3px solid grey; /* Add grey outline */
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: blue;
+}
+#safety:hover {
+    filter:opacity(1)
+}
+#reload {
+    background-color:blue;
+    filter:opacity(.8);
+
+    
+      
+      
+      
+      
+
+}
+
+#reload-tip {
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+}
+#safety-dot {
+    padding: 0;
+    margin: 0;
+    width: 5px;
+    height: 15px;
+    border-radius: 5px;
+    background-color:rgb(64, 255, 0);
+}
+
+#shoot:hover {
+    filter:opacity(1)
 }
 input[type=range] {
     -webkit-appearance: none; /* Override default CSS styles */
@@ -31,15 +182,24 @@ input[type=range]:hover {
     opacity: 1; /* Fully shown on mouse-over */
 }
 :disabled {
-    background:rgb(139, 139, 139);
+    background:rgb(0, 0, 0);
 }
 :disabled:hover {
-    background:rgb(139, 139, 139);
+    background:rgb(0, 0, 0);
+}
+#inventory:hover {
+    filter: opacity(1);
+}
+#reload:hover {
+    filter: opacity(1);
 }
 .disabled {
     pointer-events: none;
-    filter:opacity(.5);
-    background-color:red;
+    /* filter: opacity(.1) blur(5px); */
+
+    filter: opacity(.5);
+
+    background-color: red;
 }
 .selected {
     background-color: orange;
@@ -51,9 +211,47 @@ input[type=range]:hover {
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
+.creditCircle {
+    background-color:orange;
+
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+    border-radius: 5px;
+}
+.equipment_item {
+    width: 100%;
+
+}
+.nomargin {
+    margin: 0 ;
+    line-height: 5px;
+}
+#restart {
+    height: 50px;
+    width: 100px;
+}
+.statscroll {
+    overflow-y:scroll;
+    height: 200px;
+}
+#creditGraphic {
+    flex-direction: row-reverse;
+}
+.stat-statistics {
+    overflow-y:scroll;
+}
+
+.unallocated {
+    background-color:rgb(149, 149, 149);
+
+}
+
 
 button {
     filter: opacity(.7);
+    margin-top: 0px;
+    border-radius: 10px;
 }
 #illegal-before {
 
@@ -64,15 +262,17 @@ button {
 .row {
     display: flex;
     flex-direction: row;
+    font-weight: bolder;
+    color: orange;
+    justify-content: space-between}
+#points {
+    color:orange;
 }
 #illegal-after {
     background-color:red;
 }
 
-#deerAlert {
-    background-color:rgb(88, 19, 19);
-    
-}
+
 
 #watch {
     width: 33vw;
@@ -88,7 +288,18 @@ button {
     width: 50%;
     border: none;
 }
+#controls {
+    width: auto;
+    /* background-color:rgba(255, 115, 0, 0.259); */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex-direction: row;
+    justify-content: center;
+    padding-left:0;
+    padding-right: 0;
+    gap:20px;
 
+}
 #personal-stats-information {
     display: flex;
     flex-direction: row;
@@ -104,6 +315,13 @@ button {
     max-height: 400px;
 
 }
+#inventory {
+    background-color:rgb(0, 0, 0);
+    justify-content: center;
+    height: 100%;
+    /* box-shadow: blue; */
+
+}
 #game-display {
     background-color:rgb(255, 255, 255);
     max-width: 300px;
@@ -114,4 +332,12 @@ button {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+#toggle-timer {
+    justify-content: center;
+    filter: opacity(.8);
+
+}
+#toggle-timer:hover {
+filter: opacity(1);
 }

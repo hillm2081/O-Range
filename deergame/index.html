@@ -3,67 +3,143 @@
 <html>
 <head>
     <title>My Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <link rel="stylesheet" href="css/stylesheet.css">
-    
+
 </head>
 <body>
 
-    <h1>The O-Range</h1> <div id="deerAlert">.</div>
+    <div class="row" style="justify-content: center;"><h1>The O-Range</h1> </div>
     <hr> <!-- Line underneath the header -->
-    <p>Ethically hunt bucks!</p> <!-- Small description -->
     <br> <!-- Gap -->
-    <div><p id="points">0</p><p>points. </p></div>
+    <div class="row" style="justify-content: center;gap: 10px;"><div id="deerAlert"></div></div>
+    
     
 
 
+<!-- binoculars - identify your animal,
+scope - 100% accuracy, 100% chance of killing
+orange - 0% chance of being shot
+watch - numeric representation of time
+round - increase mag size to 2 bullets -->
 
 
-    <div id="game"><div id="game-display" class="disabled"> </div>
-    <div id="controls" class="row"><button id="toggle-timer" value="0">timer</button><div id="current-time">00:00:00</div><div id="legal-hunting-start"></div><div id="legal-hunt-end"></div><button id="shoot">shoot</button><button id="safety">safety</button><button id="reload">reload</button></button></div>   
+
+
+<div id="game">
+        
+        
+        <div id="game-display"><div id="encounterGraphic"></div> </div>
+
+        <div id="inventory">
+            <div id="stat-section" >
+                <div class="stat-group" id="stat-watch"> 
+                    <h2>Watch</h2>
+                    <hr> <!-- Line underneath the header -->
+                    <div id="timeAlert"></div>
+                    <br><p id="current-time"> </p><br><p id="legal-hunting-start"></p><br><div id="legal-hunt-end"></div> <!-- Small description -->
+                    <br> <!-- Gap -->
+                    <!-- Slider that the user can't modify -->
+                    <!-- <input type="range" id="slider1" min="1" max="10" data-val="0" disabled>Allocated Stat Points<br> -->
+                </div> 
+                    <div class="stat-group">
+                        <h3>Equipment</h3>
+                        <div id="creditGraphic" class="row"></div>
+                        <hr> <!-- Line underneath the header -->
+                        <button id="equipmentItem0" data-val="0" class="equipment_item">Orange Clothing</button><br>
+                        <button id="equipmentItem1" data-val="0" class="equipment_item">Binoculars</button><br>
+                        <button id="equipmentItem2" data-val="0" class="equipment_item">Rifle Scope</button><br>
+                        <button id="equipmentItem3" data-val="0" class="equipment_item">Watch</button><br>
+                        <!-- <button id="equipmentItem4" data-val="0" class="equipment_item">Rounds</button><br> -->
+                        <button id="equipmentItem4" data-val="0" class="equipment_item">Hunter's Manual</button><br>
+                        <!-- <button data-val="0" class="equipment_item">Wearable Decoy</button><br> -->
+                    </div>
+                    <div id="animal-detector" class="stat-group">
+                        <h3>Encounters</h3>
+    
+                    </div>
+                    <div class="stat-group" id="stat-manual" style="width: 200px; overflow-y: scroll">
+                        <h2>Hunter's Manual</h2>
+
+                        <p>Remember to be as safe and ethical as possible! More points are awarded when these are followed.</p>
+                        <p>Remember, you only have a tag for a buck! Don't poach and shoot a doe, or anything else!</p>
+
+   
+
+                        <p>Wearing orange ensures you stay safe, as humans can easily see you. Deer cannot see orange, as such it works with hunting attire.</p>
+
+                        <p>Using your rifle scope helps with your aim. Shooting at deer without a scope is unethical, as you cannot fine-tune your aim and risk landing a non-lethal shot.</p>
+
+                        <p> Using a watch is vital, since you can only hunt during specific periods of the day. Shooting outside of these periods is illegal, and unethical.</p>
+
+                        <p>Keeping your safety on at all times is vital, if the rifle gets jostled or the trigger accidentally gets pulled the rifle will fire. The safety stops this, so unless you are going to shoot, keep the safety on! <b>Red means the gun is ready to fire. Red = Dead!</b></p>
+
+                        <p> Binoculars are vital to identifying creatures. Using your rifle to identify animals can be considered unethical, in the chance that what you see is another hunter - suddenly you are pointing your rifle at another human which leads to jail time. Using Binoculars leads to a clearer image anyways, so use them to identify what you see!</p>
+
+                        <p> In real life, all of these items should be carried with you. In this game, the experience of managing all items you need to hunt is emulated. Scan the field with binoculars and identify your animals, check your watch and make sure its legal light, shoot your animal - but make sure your wearing orange. When in doubt, look at your Hunters Manual.</p>
+
+                        <p> Whitetails are very skiddish. They tend to only stick around between 1-4 seconds when they see you, so act fast!</p>
+
+                        <p> The game does not progress when you are in your inventory.</p>
+
+                        <p>Wear Orange. Don't risk your life, you never know if someone else isn't identifying what they see, or if there is an animal between you and them.</p>
+
+                        <p> You lose points for being unethical. Leave the safety on!</p>
+
+
+                        <p>In Alberta hunting legislation, it is illegal to fire a firearm within 200m of an operated building.</p>
+
+                        <p> A caliber is the distance between the lands of the barrel.</p>
+
+
+
+   
+                    </div> 
+                    <div class="stat-group" id="stat-statistics" style="width: 200px;">
+                        <h2>Statistics</h2>
+                        <div id="statscroll">
+                        <div class="row space-between"><p id="points">0</p><p> points. </p></div>
+                        <div class="row space-between"><p id="bucksShot"></p>
+                            <p>Bucks Shot</p></div>
+<div class="row space-between"><p id="doesShot"></p>
+    <p>Does Shot</p></div>
+<div class="row space-between"><p id="humansShot"></p>
+    <p> Humans Shot</p></div>
+<div class="row space-between"><p id="misses"></p>
+    <p> Misses</p></div>
+<div class="row space-between"><p id="inventoryTime"></p>
+    <p> sec. in Inventory </p></div>
+<div class="row space-between"><p id="unethicalActions"></p>
+    <p> Unethical Actions</p></div>
+
+    <br><button id="restart">restart</button>
+
+ 
+
+                        
+
+                        
+                        
+                        
+                        
+                    </div>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    
+    
+    </div>
+    <div id="controls" class="row"><button id="toggle-timer" value="0">Inventory</button><button id="safety"><div id="safety-dot"></div></button><button id="shoot">shoot</button><button id="reload">reload</button></button></div>   
 
     <div id="personal-stats-information">
     <!-- <div id="watch"><div class="illegal-before">.</div><div class="legal">.</div><div class="illegal-after">.</div></div> -->
 
-    <div class="stat-group" id="stat-information"> 
-        <h2>Stats</h2>
-        <hr> <!-- Line underneath the header -->
-        <div><p>Total points:</p><p id="remainingPoints"></p></div> <!-- Small description -->
-        <br> <!-- Gap -->
-        <!-- Slider that the user can't modify -->
-        <!-- <input type="range" id="slider1" min="1" max="10" data-val="0" disabled>Allocated Stat Points<br> -->
-    </div> 
-    
-    <div id="stat-section" >
-        <div class="stat-group">
-            <h3>Equipment</h3>
-            <p>Each piece costs 2</p>
-            <hr> <!-- Line underneath the header -->
-            <button data-val="0" class="equipment_item">Orange</button><br>
-            <button data-val="0" class="equipment_item">Binoculars</button><br>
-            <button data-val="0" class="equipment_item">Scope</button><br>
-            <button data-val="0" class="equipment_item">Watch</button><br>
-            <button data-val="0" class="equipment_item">Rounds</button><br>
-            <!-- <button data-val="0" class="equipment_item">Wearable Decoy</button><br> -->
-        </div>
-        <div id="animal-detector" class="stat-group">
-            <h3>Animals</h3>
-            <!-- <p id="encounterOne">.</p>
-            <p id="encounterTwo">.</p>
-            <p id="encounterThree">.</p>
-            <p id="encounterFour">.</p> -->
-        </div>
 
-        </div>
-        <!-- <div class="stat-group">
-            <h3>Skills</h3>
-            <hr>
-            <input type="range" id="slider1" min="0" max="3" data-val="0" class="skill_item" value="0"> Eyesight<br>
-            <input type="range" id="slider2" min="0" max="3" data-val="0" class="skill_item" value="0"> Research<br>
-            <input type="range" id="slider3" min="0" max="3" data-val="0" class="skill_item" value="0"> Accuracy<br>
-            <input type="range" id="slider4" min="0" max="3" data-val="0" class="skill_item" value="0"> Nerves<br>
-            <input type="range" id="slider5" min="0" max="3" data-val="0" class="skill_item" value="0"> Bargaining<br>
-        </div> -->
-    </div>
+  
 </div>
 
     <script src="js/script.js"></script>
